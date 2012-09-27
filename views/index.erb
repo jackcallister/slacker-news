@@ -1,2 +1,13 @@
 <link rel="stylesheet" href="css/style.css" type="text/css" />
-<h1>Hello, World!</h1>
+<h1>hello</h1>
+<div id="articles">
+  <% @articles.each_with_index do |article, index| %>
+    <p>
+      <%= index + 1 %>
+      <a href="<%= article.url %>">
+        <%= article.title %>
+      </a>
+      <%= article.commentCount %>
+    </p>
+  <% end %>
+</div>
