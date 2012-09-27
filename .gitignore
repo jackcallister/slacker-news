@@ -1,2 +1,3 @@
 *.DS_Store
+.rvmrc
 public/css/style.less
