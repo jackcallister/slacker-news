@@ -1,13 +1,22 @@
-<link rel="stylesheet" href="css/style.css" type="text/css" />
-<h1>Slacker News</h1>
-<div id="articles">
-  <% @articles.each_with_index do |article, index| %>
-    <p>
-      <%= index + 1 %>
-      <a href="<%= article.url %>">
-        <%= article.title %>
-      </a>
-      <%= article.commentCount %>
-    </p>
-  <% end %>
-</div>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Slacker News</title>
+		<link rel="stylesheet" href="css/style.css" type="text/css" />
+	</head>
+
+	<body>
+		<h1>Slacker News</h1>
+		<div id="articles">
+		  <% @articles.each_with_index do |article, index| %>
+		    <p>
+		      <%= index + 1 %>
+		      <a href="<%= article.url %>">
+		        <%= article.title %>
+		      </a>
+		      <%= article.commentCount %>
+		    </p>
+		  <% end %>
+		</div>
+	</body>
+</html>
