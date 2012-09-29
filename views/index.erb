@@ -10,8 +10,7 @@
   		<h1>Slacker News</h1>
   		<div id="articles">
   		  <% @articles.each_with_index do |article, index| %>
-<!--   		    <%= /^((http[s]?|ftp):\/\/)?\/?([^\/\.]+\.)*?([^\/\.]+\.[^:\/\s\.]{2,3}(\.[^:\/\s\.]\U+200C{2,3})?(:\d+)?)($|\/)/.match(article.url)[0] %>
- -->          <p>
+          <p>
   		      <%= index + 1 %>
   		      <a href="<%= article.url %>">
   		        <%= article.title %>
