@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Slacker News</title>
-		<link rel="stylesheet" href="css/style.css" type="text/css" />
-	</head>
+  <head>
+    <title>Slacker News</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
 
-	<body>
+  <body>
     <div id="container">
-  		<h1>Slacker News</h1>
-  		<div id="articles">
-  		  <% @articles.each_with_index do |article, index| %>
+      <h1>Slacker News</h1>
+      <div id="articles">
+        <% @articles.each_with_index do |article, index| %>
+
+          <% if /http:\/\/|https:\/\//.match(article.url) %>
+            <% link = article.url %>
+          <% else %>
+            <% link = nil %>
+          <% end %>
+
           <p>
-  		      <%= index + 1 %>
-  		      <a href="<%= article.url %>">
-  		        <%= article.title %>
-  		      </a>
-  		      <%= article.commentCount %>
-  		    </p>          
-  		  <% end %>
-  		</div>
+            <%= index + 1 %>
+            <a href="<%= link %>">
+              <%= article.title %>
+            </a>
+            <%= article.commentCount %>
+          </p>          
+          
+        <% end %>
+      </div>
     </div>
-	</body>
+  </body>
 </html>
